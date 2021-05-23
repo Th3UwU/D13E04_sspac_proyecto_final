@@ -26,7 +26,7 @@ end
 // Bloque always
 always @*
 begin
-	if (REG_WRITE && ~WRITE_DATA == 32'bx)
+	if (REG_WRITE)
 	begin
 		registro[WRITE_REGISTER] <= WRITE_DATA;
 	end
