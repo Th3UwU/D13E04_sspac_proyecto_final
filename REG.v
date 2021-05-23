@@ -28,7 +28,10 @@ always @*
 begin
 	if (REG_WRITE)
 	begin
-		registro[WRITE_REGISTER] <= WRITE_DATA;
+		if(~(^WRITE_DATA === 1'bx)) // Si cualquier valor de WRITE_DATA tiene NO una x / indefinido
+		begin
+			registro[WRITE_REGISTER] = WRITE_DATA;
+		end
 	end
 
 	READ_1 <= READ_REGISTER1;
