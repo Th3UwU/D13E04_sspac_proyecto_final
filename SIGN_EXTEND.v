@@ -8,6 +8,7 @@ module SIGN_EXTEND
 
 always @*
 begin
+	/*
 	// Si es unsigned
 	if (IN[15] == 1'b0)
 	begin
@@ -18,6 +19,9 @@ begin
 	begin
 		OUT <= {16'b1111111111111111, IN};
 	end
+	*/
+
+	OUT <= {{16{IN[15]}}, IN};
 end
 
 
