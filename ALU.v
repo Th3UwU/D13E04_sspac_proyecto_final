@@ -9,13 +9,13 @@ module ALU(
 );     
 always @* begin         
 	case (Sel)  
-		4'b0000: Out <= Op1 & Op2;
-		4'b0001: Out <= Op1 | Op2;
-		4'b0010: Out <= Op1 + Op2;
-		4'b0110: Out <= Op1 - Op2;
-		4'b0111: Out <= (Op1 < Op2) ? 1 : 0;
-		4'b0101: Out <= Op1 * Op2;
-		4'b0110: Out <= Op1 / Op2;
+		4'b0000: Out <= Op1 & Op2; //And
+		4'b0001: Out <= Op1 | Op2; //Or
+		4'b0010: Out <= Op1 + Op2; //Add
+		4'b0110: Out <= Op1 - Op2; //Sub
+		4'b0111: Out <= (Op1 < Op2) ? 1 : 0; //SLT
+		4'b0101: Out <= Op1 * Op2; //Mul
+		4'b0110: Out <= Op1 / Op2; //Div
 		4'b0111: Out <= 32'd0;
 		default: Out <= 32'b0; 
 
