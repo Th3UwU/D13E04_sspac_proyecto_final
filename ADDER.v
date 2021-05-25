@@ -1,5 +1,5 @@
 `timescale 1ns/1ns
-
+//Suma 
 module ADDER
 (
 	input [31:0]IN1,
